@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the Three-now Shop extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_tlshop_domain_model_category">Category</label>
+			<label index="tx_tlshop_domain_model_category.name">name</label>
+			<label index="tx_tlshop_domain_model_category.isroot">isroot</label>
+			<label index="tx_tlshop_domain_model_category.parent">parent</label>
+			<label index="tx_tlshop_domain_model_article">Article</label>
+			<label index="tx_tlshop_domain_model_article.name">name</label>
+			<label index="tx_tlshop_domain_model_article.image">image</label>
+			<label index="tx_tlshop_domain_model_article.category">category</label>
+			<label index="tx_tlshop_domain_model_article.size">size</label>
+			<label index="tx_tlshop_domain_model_article.color">color</label>
+			<label index="tx_tlshop_domain_model_size">Size</label>
+			<label index="tx_tlshop_domain_model_size.name">name</label>
+			<label index="tx_tlshop_domain_model_size.value">value</label>
+			<label index="tx_tlshop_domain_model_color">Color</label>
+			<label index="tx_tlshop_domain_model_color.name">name</label>
+			<label index="tx_tlshop_domain_model_color.value">value</label>
+		</languageKey>
+	</data>
+</T3locallang>

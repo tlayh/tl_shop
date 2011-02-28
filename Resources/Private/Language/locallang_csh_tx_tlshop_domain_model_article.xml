@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <description>Context Sensitive Help (CSH) for table tx_tlshop_domain_model_article</description>
+        <type>CSH</type>
+        <csh_table>tx_tlshop_domain_model_article</csh_table>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+			<label index="name.description">name</label>
+			<label index="image.description">image</label>
+			<label index="category.description">category</label>
+			<label index="size.description">size</label>
+			<label index="color.description">color</label>
+		</languageKey>
+    </data>
+</T3locallang>

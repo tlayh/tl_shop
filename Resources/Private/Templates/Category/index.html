@@ -1,0 +1,34 @@
+<f:layout name="default" />
+
+This Template is responsible for creating a table of domain objects.
+
+<f:section name="main">
+<h1>{currentCat.name}</h1>
+
+<f:flashMessages />
+
+<ul>
+	<f:for each="{categories}" as="category">
+		<li><f:link.action action="index" arguments="{category : category}"> {category.name}</f:link.action></li>
+	</f:for>
+</ul>
+
+	<hr />
+
+	<f:if condition="{articlesExist}">
+		<ul class="article-listing">
+		<f:for each="{articles}" as="article">
+			<li>
+				<f:link.action action="index" controller="Article" arguments="{article : article}">
+					<f:image src="uploads/tx_tlshop/{article.image}" alt="{article.name}" width="150" />
+				</f:link.action>
+				<br />
+				<f:link.action action="index" controller="Article" arguments="{article : article}">
+					{article.name}
+				</f:link.action>
+			</li>
+		</f:for>
+		</ul>
+	</f:if>
+
+</f:section>

@@ -1,0 +1,55 @@
+<f:layout name="default" />
+
+This Template is responsible for creating a table of domain objects.
+
+<f:section name="main">
+
+<f:flashMessages />
+
+	<f:form action="submit" controller="Order">
+
+		<f:form.hidden name="price" value="{price}" />
+		<f:form.hidden name="size" value="{size}" />
+		<f:form.hidden name="uid" value="{article.uid}" />
+		<f:form.hidden name="color" value="{color}" />
+
+		<p class="order-form">
+			<label>Firstname:</label>
+			<f:form.textbox name="firstname" />
+		</p>
+
+		<p class="order-form">
+			<label>Lastname:</label>
+			<f:form.textbox name="lastname" />
+		</p>
+
+		<p class="order-form">
+			<label>Street, No.:</label>
+			<f:form.textbox name="street" />
+		</p>
+
+		<p class="order-form">
+			<label>Zip:</label>
+			<f:form.textbox name="zip" />
+		</p>
+
+		<p class="order-form">
+			<label>City</label>
+			<f:form.textbox name="city" />
+		</p>
+
+		<p class="order-form">
+			{article.name}<br />
+			Size: {size}<br />
+			Color: {color}<br />
+		</p>
+
+		<f:form.checkbox name="agb" value="agb" />Ich habe die AGB gelesen und verstanden.
+
+		<p class="order-form">
+			<f:form.submit value="Submit order" name="submit" />
+		</p>
+		
+	</f:form>
+
+</f:section>

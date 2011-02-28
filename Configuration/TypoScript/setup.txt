@@ -1,0 +1,31 @@
+plugin.tx_tlshop.settings.order {
+	senderName =
+	senderMail =
+	recipient1 =
+	recipient2 = 
+}
+
+plugin.tx_tlshop._CSS_DEFAULT_STYLE (
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-tlshop-pi1 p.order-form label {
+		width: 120px;
+		display:block;
+		float:left;
+	}
+
+	.tx-tlshop-pi1 ul.article-listing li {
+		list-style:none;
+		float:left;
+		margin:10px;
+	}
+
+	.tx-tlshop-pi1 div.description-container label {
+		width:100px;
+		display:block;
+		float:left;
+	}
+)

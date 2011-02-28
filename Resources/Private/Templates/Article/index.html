@@ -1,0 +1,45 @@
+<f:layout name="default" />
+
+This Template is responsible for creating a table of domain objects.
+
+<f:section name="main">
+
+<f:flashMessages />
+
+	<f:form action="index" controller="Order">
+
+		<div class="image-container" style="float:left;margin-right:20px;">
+			<f:image src="uploads/tx_tlshop/{article.image}" alt="{article.name}" width="300" />
+		</div>
+
+		<div class="description-container">
+			<h3>{article.name}</h3>
+
+			<p class="row">{article.text}</p>
+
+			<p class="row">
+				<label>Price:</label>{article.price}
+			</p>
+
+			<f:form.hidden value="{article.sku}" name="sku" />
+			<f:form.hidden value="{article.uid}" name="uid" />
+			<f:form.hidden value="{article.price}" name="price" />
+
+			<p class="row">
+				<label>Size:</label>
+				<f:form.select name="size" options="{article.size}" optionValueField="value" optionLabelField="name" />
+			</p>
+
+			<p class="row">
+				<label>Color:</label>
+				<f:form.select name="color" options="{article.color}" optionValueField="value" optionLabelField="name" />
+			</p>
+
+			<p class="row">
+				<f:form.submit name="prepareOrder" value="Order" />
+			</p>
+		</div>
+
+	</f:form>
+
+</f:section>

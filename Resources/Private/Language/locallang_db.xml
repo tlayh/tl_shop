@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'tl_shop'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_tlshop_domain_model_category">Category</label>
+			<label index="tx_tlshop_domain_model_category.name">Name</label>
+			<label index="tx_tlshop_domain_model_category.isroot">Isroot</label>
+			<label index="tx_tlshop_domain_model_category.parent">Parent</label>
+			<label index="tx_tlshop_domain_model_article">Article</label>
+			<label index="tx_tlshop_domain_model_article.name">Name</label>
+			<label index="tx_tlshop_domain_model_article.image">Image</label>
+			<label index="tx_tlshop_domain_model_article.category">Category</label>
+			<label index="tx_tlshop_domain_model_article.size">Size</label>
+			<label index="tx_tlshop_domain_model_article.color">Color</label>
+			<label index="tx_tlshop_domain_model_article.text">Text</label>
+			<label index="tx_tlshop_domain_model_size">Size</label>
+			<label index="tx_tlshop_domain_model_size.name">Name</label>
+			<label index="tx_tlshop_domain_model_size.value">Value</label>
+			<label index="tx_tlshop_domain_model_color">Color</label>
+			<label index="tx_tlshop_domain_model_color.name">Name</label>
+			<label index="tx_tlshop_domain_model_color.value">Value</label>
+			<label index="tx_tlshop_domain_model_article.sku">SKU</label>
+			<label index="tx_tlshop_domain_model_article.price">Price</label>
+			<label index="tx_tlshop_domain_model_order">Order</label>
+			<label index="tx_tlshop_domain_model_order.shopped">Shopped (Date)</label>
+			<label index="tx_tlshop_domain_model_order.article">Article</label>
+			<label index="tx_tlshop_domain_model_order.size">Size</label>
+			<label index="tx_tlshop_domain_model_order.color">Color</label>
+		</languageKey>
+	</data>
+</T3locallang>
