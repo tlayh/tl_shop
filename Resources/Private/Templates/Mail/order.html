@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>Order Confirmation</title>
+	</head>
+	<body>
+		<img src="http://chris.layh.com/uploads/tx_templavoila/three-schrift.png" />
+		<h3>Email confirmation Three-now</h3>
+		Hey, you just ordered something from <a href="http://www.three-now.com">Three-now</a>.
+		<br />
+		<h4>Your order:</h4>
+		{article.name}<br />
+		Size: {size}<br />
+		Color: {color}<br />
+		Price: {price}
+
+		<hr />
+		<h4>Delivery address:</h4>
+		{data.firstname} {data.lastname}<br />
+		{data.street}<br />
+		{data.zip} {data.city}<br />
+
+		<hr />
+		If there are any questions left, feel free to contact us: order@three-now.com
+	</body>
+</html>
+
