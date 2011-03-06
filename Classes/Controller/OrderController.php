@@ -106,18 +106,43 @@ class Tx_TlShop_Controller_OrderController extends Tx_Extbase_MVC_Controller_Act
 		t3lib_utility_Debug::debug($recipient, "array of recipient");
 
 		// @todo build email, use fluid for rendering mail message ???
-		$body = "This is my first order";
+		
+		$body = '';
+		$renderer = $this->getEmailRenderer('order.html');
+		$renderer->assign('data', $data);
+		$renderer->assign('article', $article);
+		$renderer->assign('price', $price);
+		$renderer->assign('color', $color);
+		$renderer->assign('size', $size);
+		$body = $renderer->render();
 
 		// @todo send mail: check: http://buzz.typo3.org/article/your-first-blog/
 		/** @var $mail t3lib_mail_Message */
 		$mail = t3lib_div::makeInstance('t3lib_mail_Message');
-		$mail->addFrom(array($senderMail=>$senderName))
-				->addTo(array($recipient))
-				->setSubject('Order confirmation three-now.com')
-				->setBody($body)
-				->send();
-		
+		//$mail->addFrom(array($senderMail=>$senderName));
+		$mail->setFrom(array($senderMail=>$senderName));
 
+		// add recipients
+		if($recipient && is_array($recipient)) {
+			foreach($recipient as $rec) {
+				$mail->addBcc($rec);
+			}
+		}
+
+		$mail->setTo(array($data['email'] => $data['firstname'].' '.$data['lastname']));
+		$mail->setSubject('Order confirmation three-now.com');
+		$mail->setBody($body, 'text/html');
+		$result = $mail->send();
+
+		t3lib_utility_Debug::debug($mail->isSent(), 'isSent');
+
+		$errorPeople = $mail->getFailedRecipients();
+		
+		t3lib_utility_Debug::debug($errorPeople, 'failed Recipients');
+		
+		t3lib_utility_Debug::debug($result, 'Result');
+
+		echo "<hr>";
 		die('submitting action');
 	}
 
@@ -127,9 +152,38 @@ class Tx_TlShop_Controller_OrderController extends Tx_Extbase_MVC_Controller_Act
 		$data['street'] = $this->request->getArgument('street');
 		$data['zip'] = $this->request->getArgument('zip');
 		$data['city'] = $this->request->getArgument('city');
-
+		$data['email'] = $this->request->getArgument('email');
 		
+		t3lib_utility_Debug::debug($data, 'data');
 
+		return $data;
+
+	}
+
+	/**
+	 * @param string $templateName
+	 * @return Tx_Fluid_View_TemplateView
+	 */
+	private function getEmailRenderer($templateName) {
+		// create another instance of Fluid
+		/** @var $renderer Tx_Fluid_View_TemplateView */
+		$renderer = t3lib_div::makeInstance('Tx_Fluid_View_TemplateView');
+		// set the controller context
+		$controllerContext = $this->buildControllerContext();
+		$controllerContext->setRequest($this->request);
+		$renderer->setControllerContext($controllerContext);
+		// this is the default template path
+		$templatePath = t3lib_extMgm::extPath('tl_shop') . 'Resources/Private/Templates/Mail/';
+		// override the template path with individual settings in TypoScript
+		$extbaseFrameworkConfiguration = Tx_Extbase_Dispatcher::getExtbaseFrameworkConfiguration();
+		if (isset($extbaseFrameworkConfiguration['view']['templateRootPath']) && strlen($extbaseFrameworkConfiguration['view']['templateRootPath']) > 0) {
+			$templatePath = t3lib_div::getFileAbsFileName($extbaseFrameworkConfiguration['view']['templateRootPath']);
+		}
+		$templateFile = $templatePath.$templateName;
+		// set the e-mail template
+		$renderer->setTemplatePathAndFilename($templateFile);
+		// and return the new Fluid instance
+		return $renderer;
 	}
 }
 ?>
