@@ -1,3 +1,8 @@
+# add js file
+page.includeJS {
+	shop = typo3conf/ext/tl_shop/Resources/Public/Js/shop.js
+}
+
 plugin.tx_tlshop.settings.order {
 	senderName =
 	senderMail =

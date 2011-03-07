@@ -9,7 +9,9 @@ This Template is responsible for creating a table of domain objects.
 	<f:form action="index" controller="Order">
 
 		<div class="image-container" style="float:left;margin-right:20px;">
-			<f:image src="uploads/tx_tlshop/{article.image}" alt="{article.name}" width="300" />
+			<a href="uploads/tx_tlshop/{article.image}" title="{article.name}">
+				<f:image src="uploads/tx_tlshop/{article.image}" alt="{article.name}" width="300" />
+			</a>
 		</div>
 
 		<div class="description-container">
