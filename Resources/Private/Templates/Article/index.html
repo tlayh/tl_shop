@@ -20,7 +20,7 @@ This Template is responsible for creating a table of domain objects.
 			<p class="row">{article.text}</p>
 
 			<p class="row">
-				<label>Price:</label>{article.price}
+				<label>Preis:</label>{article.price} &euro;
 			</p>
 
 			<f:form.hidden value="{article.sku}" name="sku" />
@@ -28,17 +28,17 @@ This Template is responsible for creating a table of domain objects.
 			<f:form.hidden value="{article.price}" name="price" />
 
 			<p class="row">
-				<label>Size:</label>
+				<label>Gr&ouml;&szlig;e:</label>
 				<f:form.select name="size" options="{article.size}" optionValueField="value" optionLabelField="name" />
 			</p>
 
 			<p class="row">
-				<label>Color:</label>
+				<label>Farbe:</label>
 				<f:form.select name="color" options="{article.color}" optionValueField="value" optionLabelField="name" />
 			</p>
 
 			<p class="row">
-				<f:form.submit name="prepareOrder" value="Order" />
+				<f:form.submit name="prepareOrder" value="Abschicken" class="powermail_kontakt powermail_submit powermail_submit_uid5 style1" />
 			</p>
 		</div>
 

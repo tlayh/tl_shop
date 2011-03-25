@@ -59,27 +59,30 @@ $TCA['tx_tlshop_domain_model_article'] = array (
 	)
 );
 
-t3lib_extMgm::addLLrefForTCAdescr('tx_tlshop_domain_model_order', 'EXT:tl_shop/Resources/Private/Language/locallang_csh_tx_tlshop_domain_model_order.xml');
+t3lib_extMgm::addLLrefForTCAdescr('tx_tlshop_domain_model_order', 'EXT:tlshop/Resources/Private/Language/locallang_csh_tx_tlshop_domain_model_order.xml');
 t3lib_extMgm::allowTableOnStandardPages('tx_tlshop_domain_model_order');
-$TCA['tx_tlshop_domain_model_order'] = array (
-	'ctrl' => array (
-		'title'             => 'LLL:EXT:tl_shop/Resources/Private/Language/locallang_db.xml:tx_tlshop_domain_model_order',
-		'label' 			=> 'name',
+$TCA['tx_tlshop_domain_model_order'] = array(
+	'ctrl' => array(
+		'title'				=> 'LLL:EXT:tl_shop/Resources/Private/Language/locallang_db.xml:tx_tlshop_domain_model_order',
+		'label' 			=> 'order_date',
 		'tstamp' 			=> 'tstamp',
 		'crdate' 			=> 'crdate',
+		'dividers2tabs' => true,
 		'versioningWS' 		=> 2,
 		'versioning_followPages'	=> TRUE,
 		'origUid' 			=> 't3_origuid',
 		'languageField' 	=> 'sys_language_uid',
-		'transOrigPointerField' 	=> 'l18n_parent',
-		'transOrigDiffSourceField' 	=> 'l18n_diffsource',
+		'transOrigPointerField' 	=> 'l10n_parent',
+		'transOrigDiffSourceField' 	=> 'l10n_diffsource',
 		'delete' 			=> 'deleted',
 		'enablecolumns' 	=> array(
-			'disabled' => 'hidden'
+			'disabled' => 'hidden',
+			'starttime' => 'starttime',
+			'endtime' => 'endtime',
 			),
 		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY) . 'Configuration/TCA/Order.php',
 		'iconfile' 			=> t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_tlshop_domain_model_order.gif'
-	)
+	),
 );
 
 t3lib_extMgm::addLLrefForTCAdescr('tx_tlshop_domain_model_size', 'EXT:tl_shop/Resources/Private/Language/locallang_csh_tx_tlshop_domain_model_size.xml');

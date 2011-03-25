@@ -68,19 +68,20 @@ CREATE TABLE tx_tlshop_domain_model_article (
 );
 
 CREATE TABLE tx_tlshop_domain_model_order (
-	uid int(11) NOT NULL auto_increment,
+	uid int(11) unsigned DEFAULT '0' NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 
-	name tinytext,
-	article int(11) unsigned DEFAULT '0',
-	size int(11) unsigned DEFAULT '0' NOT NULL,
-	color int(11) unsigned DEFAULT '0' NOT NULL,
-	shopped int(11) unsigned DEFAULT '0' NOT NULL,
+
+	order_date int(11) DEFAULT '0' NOT NULL,
+	article int(11) unsigned DEFAULT '0' NOT NULL,
+	user int(11) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
 	deleted tinyint(4) unsigned DEFAULT '0' NOT NULL,
 	hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
+	starttime int(11) unsigned DEFAULT '0' NOT NULL,
+	endtime int(11) unsigned DEFAULT '0' NOT NULL,
 
 	t3ver_oid int(11) DEFAULT '0' NOT NULL,
 	t3ver_id int(11) DEFAULT '0' NOT NULL,
@@ -93,11 +94,12 @@ CREATE TABLE tx_tlshop_domain_model_order (
 	t3_origuid int(11) DEFAULT '0' NOT NULL,
 
 	sys_language_uid int(11) DEFAULT '0' NOT NULL,
-	l18n_parent int(11) DEFAULT '0' NOT NULL,
-	l18n_diffsource mediumblob NOT NULL,
+	l10n_parent int(11) DEFAULT '0' NOT NULL,
+	l10n_diffsource mediumblob NOT NULL,
 
 	PRIMARY KEY (uid),
-	KEY parent (pid)
+	KEY parent (pid),
+	KEY t3ver_oid (t3ver_oid,t3ver_wsid)
 );
 
 CREATE TABLE tx_tlshop_domain_model_size (

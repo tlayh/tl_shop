@@ -1,7 +1,9 @@
 # add js file
 page.includeJS {
-	shop = typo3conf/ext/tl_shop/Resources/Public/Js/shop.js
+	tl_shop = typo3conf/ext/tl_shop/Resources/Public/Js/shop.js
 }
+
+plugin.tx_tlshop.view.templateRootPath = EXT:tl_shop/Resources/Private/Templates/
 
 plugin.tx_tlshop.settings.order {
 	senderName =
@@ -32,5 +34,9 @@ plugin.tx_tlshop._CSS_DEFAULT_STYLE (
 		width:100px;
 		display:block;
 		float:left;
+	}
+
+	.tx-tlshop-pi1 ul.errorMessage {
+		color:#FF9F9F;
 	}
 )

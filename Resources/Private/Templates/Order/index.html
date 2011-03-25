@@ -4,7 +4,7 @@ This Template is responsible for creating a table of domain objects.
 
 <f:section name="main">
 
-<f:flashMessages />
+<f:flashMessages class="errorMessage" />
 
 	<f:form action="submit" controller="Order">
 
@@ -14,33 +14,33 @@ This Template is responsible for creating a table of domain objects.
 		<f:form.hidden name="color" value="{color}" />
 
 		<p class="order-form">
-			<label>Firstname:</label>
-			<f:form.textbox name="firstname" />
+			<label>Vorname:</label>
+			<f:form.textbox name="firstname" value="{firstname}" />
 		</p>
 
 		<p class="order-form">
-			<label>Lastname:</label>
-			<f:form.textbox name="lastname" />
+			<label>Nachname:</label>
+			<f:form.textbox name="lastname" value="{lastname}" />
 		</p>
 
 		<p class="order-form">
 			<label>Email:</label>
-			<f:form.textbox name="email" />
+			<f:form.textbox name="email" value="{email}"/>
 		</p>
 
 		<p class="order-form">
-			<label>Street, No.:</label>
-			<f:form.textbox name="street" />
+			<label>Stra&szlig;, Nr.:</label>
+			<f:form.textbox name="street" value="{street}" />
 		</p>
 
 		<p class="order-form">
-			<label>Zip:</label>
-			<f:form.textbox name="zip" />
+			<label>PLZ:</label>
+			<f:form.textbox name="zip" value="{zip}" />
 		</p>
 
 		<p class="order-form">
-			<label>City</label>
-			<f:form.textbox name="city" />
+			<label>Stadt</label>
+			<f:form.textbox name="city" value="{city}" />
 		</p>
 
 		<p class="order-form">
@@ -52,7 +52,7 @@ This Template is responsible for creating a table of domain objects.
 		<f:form.checkbox name="agb" value="agb" />Ich habe die AGB gelesen und verstanden.
 
 		<p class="order-form">
-			<f:form.submit value="Submit order" name="submit" />
+			<f:form.submit value="Abschicken" name="submit" class="powermail_kontakt powermail_submit powermail_submit_uid5 style1" />
 		</p>
 		
 	</f:form>
