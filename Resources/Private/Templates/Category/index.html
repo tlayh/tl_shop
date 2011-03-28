@@ -20,7 +20,7 @@ This Template is responsible for creating a table of domain objects.
 		<f:for each="{articles}" as="article">
 			<li>
 				<f:link.action action="index" controller="Article" arguments="{article : article}">
-					<f:image src="uploads/tx_tlshop/{article.image}" alt="{article.name}" width="150" />
+					<f:image src="uploads/tx_tlshop/{article.image}" alt="{article.name}" maxWidth="150" maxHeight="150" />
 				</f:link.action>
 				<br />
 				<f:link.action action="index" controller="Article" arguments="{article : article}">
@@ -30,5 +30,7 @@ This Template is responsible for creating a table of domain objects.
 		</f:for>
 		</ul>
 	</f:if>
+
+	<br style="clear:both;" />
 
 </f:section>
